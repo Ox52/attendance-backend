@@ -4,6 +4,23 @@ const app = express()
 
 app.use(express.json())
 
+constDB = require("./lib/db")
+
+//Routes
+
+
+const authRoutes = require("./routes/authRoute")
+const classRoutes = require("./routes/classRouter")
+const studentRoutes = require("./routes/studentRoute")
+const attendanceRoutes = require("./routes/attendanceRoutes")
+
+
+
+
+app.use("/auth", authRoutes)
+app.use("/class", classRoutes)
+app.use("/student", studentRoutes)
+app.use("/attendance", attendanceRoutes)
 
 
 app.use((req,res)=>{
